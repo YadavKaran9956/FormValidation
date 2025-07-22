@@ -1,0 +1,61 @@
+.container {
+    padding: 10px;
+    width: fit-content;
+    position: absolute;
+    top: 200px;
+    left: 250px;
+}
+
+.container h1 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    position: relative;
+    left: 340px;
+    width: fit-content;
+
+    i {
+        font-size: 15px;
+    }
+}
+
+.field {
+    padding-top: 20px;
+    width: 900px;
+
+    label {
+        font-size: 30px;
+    }
+
+    input {
+        float: right;
+        font-size: 30px;
+        width: 550px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+}
+
+.submitBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+    button {
+        background-color: rgb(110, 223, 110);
+        width: fit-content;
+        padding: 10px;
+        font-size: 20px;
+        border: 2px solid green;
+        border-radius: 10px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+}
