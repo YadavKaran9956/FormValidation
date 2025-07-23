@@ -43,6 +43,26 @@
     }
 }
 
+.showHide {
+    margin-top: 15px;
+
+    input,
+    span {
+        font-weight: bold;
+        position: relative;
+        left: 340px;
+    }
+}
+.validated{
+    display: none;
+    justify-content: center;
+    p{
+        font-size: 30px;
+        color: green;
+        font-weight: bold;
+    }
+}
+
 .submitBtn {
     display: flex;
     justify-content: center;

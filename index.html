@@ -19,22 +19,32 @@
             <input type="email" id="mail" name="email">
         </div>
         <div class="errorMsg">
-            <p><i class="material-icons">warning</i> error message</p>
+            <p id="errMsgEmail"></p>
         </div>
 
         <div class="field">
             <label for="phone">Phone:</label>
             <input type="tel" id="phone" name="phone">
         </div>
+        <div class="errorMsg">
+            <p id="errMsgPhone"></p>
+        </div>
 
         <div class="field">
             <label for="password">Password:</label>
             <input type="password" id="pass" name="password">
         </div>
+        <div class="errorMsg">
+            <p id="errMsgPass"></p>
+        </div>
 
-        <div class="field">
-            <label for="password">Confirm Password:</label>
-            <input type="password" id="cpass" name="cpassword">
+        <div class="showHide">
+            <input type="checkbox" id="showPass" onclick="showHidePass()">
+            <span>Show Password</span>
+        </div>
+
+        <div class="validated">
+            <p class="successMsg"></p>
         </div>
 
         <div class="submitBtn">
