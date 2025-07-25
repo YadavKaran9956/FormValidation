@@ -39,7 +39,20 @@
         </div>
 
         <div class="showHide">
-            <input type="checkbox" id="showPass" onclick="showHidePass()">
+            <input type="checkbox" id="showPass" onclick="showHidePass('pass')">
+            <span>Show Password</span>
+        </div>
+
+        <div class="field">
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="cpass" name="cpassword">
+        </div>
+        <div class="errorMsg">
+            <p id="errMsgCpass"></p>
+        </div>
+
+        <div class="showHide">
+            <input type="checkbox" id="showCpass" onclick="showHidePass('cpass')">
             <span>Show Password</span>
         </div>
 

@@ -13,8 +13,12 @@ function validatePassword(password) {
     return regex.test(password);
 }
 
-function showHidePass() {
-    var inp = document.getElementById("pass");
+function showHidePass(type) {
+    if (type == 'pass') {
+        var inp = document.getElementById("pass");
+    } else if (type == 'cpass') {
+        var inp = document.getElementById("cpass");
+    }
     if (inp.type === "password") {
         inp.type = "text";
     } else {
@@ -22,10 +26,19 @@ function showHidePass() {
     }
 }
 
+document.getElementById("phone").addEventListener("keypress", function (event) {
+    var charCode = event.charCode;
+
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        event.preventDefault();
+    }
+});
+
 $("#submitButton").click(() => {
     var email = $("#mail").val();
     var phone = $("#phone").val();
     var pass = $("#pass").val();
+    var cPass = $("#cpass").val();
     var isEmail = validateEmail(email);
     var isPhone = validatePhone(phone);
     var isPass = validatePassword(pass);
@@ -35,7 +48,7 @@ $("#submitButton").click(() => {
     } else if (!isEmail) {
         document.getElementById("errMsgEmail").innerHTML = `<i class="material-icons">warning</i> Invalid email.`;
     } else {
-         document.getElementById("errMsgEmail").innerHTML = "";
+        document.getElementById("errMsgEmail").innerHTML = "";
     }
 
     if (!phone) {
@@ -43,7 +56,7 @@ $("#submitButton").click(() => {
     } else if (!isPhone) {
         document.getElementById("errMsgPhone").innerHTML = `<i class="material-icons">warning</i> The phone number must be only 10 digits long.`;
     } else {
-         document.getElementById("errMsgPhone").innerHTML = "";
+        document.getElementById("errMsgPhone").innerHTML = "";
     }
 
     if (!pass) {
@@ -51,17 +64,25 @@ $("#submitButton").click(() => {
     } else if (!isPass) {
         document.getElementById("errMsgPass").innerHTML = `<i class="material-icons">warning</i> The password must be atleast 8 characters long and contains an uppercase, a lowecase & numbers.`;
     } else {
-         document.getElementById("errMsgPass").innerHTML = "";
+        document.getElementById("errMsgPass").innerHTML = "";
     }
 
-    if(email && isEmail && phone && isPhone && pass && isPass){
+    if (!cPass) {
+        document.getElementById("errMsgCpass").innerHTML = `<i class="material-icons">warning</i> Confirm password is empty.`;
+    } else if (pass != cPass) {
+        document.getElementById("errMsgCpass").innerHTML = `<i class="material-icons">warning</i> Confirm password does not match.`;
+    } else {
+        document.getElementById("errMsgCpass").innerHTML = "";
+    }
+
+    if (email && isEmail && phone && isPhone && pass && isPass && cPass && pass == cPass) {
         document.querySelector(".validated").style.display = "flex";
         console.log("hrllo");
         setTimeout(() => {
             document.querySelector(".successMsg").innerHTML = `<i class="material-icons">success</i> Hurray! The form has been validated successfully.`;
         }, 1500);
     } else {
-         console.log("hello")
+        console.log("hello")
         document.querySelector(".validated").style.display = "none";
     }
 });
