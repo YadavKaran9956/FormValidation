@@ -44,33 +44,33 @@ $("#submitButton").click(() => {
     var isPass = validatePassword(pass);
 
     if (!email) {
-        document.getElementById("errMsgEmail").innerHTML = `<i class="material-icons">warning</i> Email is empty.`;
+        document.getElementById("errMsgEmail").innerHTML = `<i class="fa fa-exclamation-triangle"></i> Email is empty.`;
     } else if (!isEmail) {
-        document.getElementById("errMsgEmail").innerHTML = `<i class="material-icons">warning</i> Invalid email.`;
+        document.getElementById("errMsgEmail").innerHTML = `<i class="fa fa-exclamation-triangle"></i> Invalid email.`;
     } else {
         document.getElementById("errMsgEmail").innerHTML = "";
     }
 
     if (!phone) {
-        document.getElementById("errMsgPhone").innerHTML = `<i class="material-icons">warning</i> Phone number is empty.`;
+        document.getElementById("errMsgPhone").innerHTML = `<i class="fa fa-exclamation-triangle"></i> Phone number is empty.`;
     } else if (!isPhone) {
-        document.getElementById("errMsgPhone").innerHTML = `<i class="material-icons">warning</i> The phone number must be only 10 digits long.`;
+        document.getElementById("errMsgPhone").innerHTML = `<i class="fa fa-exclamation-triangle"></i> The phone number must be only 10 digits long.`;
     } else {
         document.getElementById("errMsgPhone").innerHTML = "";
     }
 
     if (!pass) {
-        document.getElementById("errMsgPass").innerHTML = `<i class="material-icons">warning</i> Password is empty.`;
+        document.getElementById("errMsgPass").innerHTML = `<i class="fa fa-exclamation-triangle"></i> Password is empty.`;
     } else if (!isPass) {
-        document.getElementById("errMsgPass").innerHTML = `<i class="material-icons">warning</i> The password must be atleast 8 characters long and contains an uppercase, a lowecase & numbers.`;
+        document.getElementById("errMsgPass").innerHTML = `<i class="fa fa-exclamation-triangle"></i> The password must be atleast 8 characters long and contains an uppercase, a lowecase & numbers.`;
     } else {
         document.getElementById("errMsgPass").innerHTML = "";
     }
 
     if (!cPass) {
-        document.getElementById("errMsgCpass").innerHTML = `<i class="material-icons">warning</i> Confirm password is empty.`;
+        document.getElementById("errMsgCpass").innerHTML = `<i class="fa fa-exclamation-triangle"></i> Confirm password is empty.`;
     } else if (pass != cPass) {
-        document.getElementById("errMsgCpass").innerHTML = `<i class="material-icons">warning</i> Confirm password does not match.`;
+        document.getElementById("errMsgCpass").innerHTML = `<i class="fa fa-exclamation-triangle"></i> Confirm password does not match.`;
     } else {
         document.getElementById("errMsgCpass").innerHTML = "";
     }
@@ -79,7 +79,7 @@ $("#submitButton").click(() => {
         document.querySelector(".validated").style.display = "flex";
         console.log("hrllo");
         setTimeout(() => {
-            document.querySelector(".successMsg").innerHTML = `<i class="material-icons">success</i> Hurray! The form has been validated successfully.`;
+            document.querySelector(".successMsg").innerHTML = `<i class="fa-regular fa-circle-check"></i> Hurray! The form has been validated successfully.`;
         }, 1500);
     } else {
         console.log("hello")
